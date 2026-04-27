@@ -1,0 +1,295 @@
+{
+  "main": {
+    "id": "f9e1902a69f6e1cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef79a605d3aeccd7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6cfd2d359d9ecde0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Docker/basics/networking-commands.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "networking-commands"
+            }
+          },
+          {
+            "id": "7de0f64a1f3aeeca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "concepts/SQLAlchemy Async.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SQLAlchemy Async"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "78919fc2bb151fa0",
+    "type": "split",
+    "children": [
+      {
+        "id": "a9fd4f85a4a1a163",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "35f0eeb19fcd2ecb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "988c43fd67906fa7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e42c40be3585734b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bd37aa57e286d00a",
+    "type": "split",
+    "children": [
+      {
+        "id": "093cc0eee81fa7ec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f51bccdd70eb076",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Linux/01-System/Environment Variables.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Environment Variables"
+            }
+          },
+          {
+            "id": "21f5d9ea3f60b673",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Linux/01-System/Environment Variables.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Environment Variables"
+            }
+          },
+          {
+            "id": "1d60374692764cc3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "5e8ef01dd0a66e62",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "1139d10a4ad702f8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Linux/09-Beyond-the-basics/Namespaces/Namespace basics.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Namespace basics"
+            }
+          },
+          {
+            "id": "c9addd8850121f96",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "e90633f742e4978d",
+            "type": "leaf",
+            "state": {
+              "type": "smart-lookup-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-lookup-view"
+            }
+          },
+          {
+            "id": "062582f6fd2c57ee",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
+          },
+          {
+            "id": "55b04cb9038f1326",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
+          }
+        ],
+        "currentTab": 8
+      }
+    ],
+    "direction": "horizontal",
+    "width": 399.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Smart Lookup: Open lookup view": false,
+      "smart-connections:Smart Connections: Open random connection": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-spaced-repetition:Review flashcards": false
+    }
+  },
+  "active": "7de0f64a1f3aeeca",
+  "lastOpenFiles": [
+    "Docker/basics/More into docker networking.md",
+    "Docker/basics/commands.md",
+    "Linux/01-System/Boot Process - initramfs.md",
+    "agents.md",
+    "Linux/01-System/Environment Variables.md",
+    "Linux/09-Beyond-the-basics/Namespaces/mount namespaces.md",
+    "Linux/09-Beyond-the-basics/Namespaces/Namespace basics.md",
+    "attachments/Pasted image 20260411112818.png",
+    "attachments/Pasted image 20260411112315.png",
+    "attachments",
+    "Linux/06-Text-and-Files/awk - Text Processing.md",
+    "Linux/07-Backup-and-Storage/dd - Disk Duplication.md",
+    "Linux/09-Beyond-the-basics/Namespaces",
+    "Linux/09-Beyond-the-basics",
+    "Linux/02-Filesystem/Filesystem Layout - FHS.md",
+    "raw_docs/obsidian-spaced-repetition.skill",
+    "Linux/08-System-Information/System Information Commands.md",
+    "Linux/08-System-Information/System Information Commands.md.tmp.11824.1773984571317",
+    "Linux/08-System-Information/Hardware Information Commands.md",
+    "Linux/08-System-Information/Hardware Information Commands.md.tmp.11824.1773984558458",
+    "Linux/07-Backup-and-Storage/dd - Disk Duplication.md.tmp.11824.1773984539022",
+    "raw_docs/previous_notes_on_linux/Filesystem_layout.md",
+    "Linux/07-Backup-and-Storage/Compression Tools.md",
+    "Linux/07-Backup-and-Storage/rsync - File Synchronization.md",
+    "Linux/07-Backup-and-Storage/rsync - File Synchronization.md.tmp.11824.1773984507683",
+    "Linux/06-Text-and-Files/File Manipulation.md",
+    "Linux/06-Text-and-Files/File Manipulation.md.tmp.11824.1773984494897",
+    "Linux/06-Text-and-Files/Vim Editor.md",
+    "Linux/06-Text-and-Files/Vim Editor.md.tmp.11824.1773984484732",
+    "Linux/06-Text-and-Files/File Comparison - diff and cmp.md",
+    "Linux/06-Text-and-Files/sed - Stream Editor.md",
+    "Linux/06-Text-and-Files/head tail less - Viewing Files.md",
+    "Linux/06-Text-and-Files/cat - Concatenate and View Files.md",
+    "Linux/05-Networking/iptables Basics.md",
+    "Linux/05-Networking/Network Diagnostics.md",
+    "Linux/05-Networking/SCP - Secure Copy.md",
+    "Linux/05-Networking/SSH - Secure Shell.md",
+    "Linux/05-Networking/DNS and Name Resolution.md",
+    "raw_docs/attachments/Pasted image 20250701122445.png",
+    "raw_docs/attachments/Pasted image 20250701122414.png",
+    "raw_docs/attachments/Pasted image 20250701120409.png",
+    "raw_docs/attachments/Pasted image 20250701120157.png",
+    "raw_docs/attachments/Pasted image 20250701120135.png",
+    "raw_docs/attachments/Pasted image 20250701115936.png",
+    "raw_docs/attachments/Pasted image 20250701115915.png",
+    "raw_docs/attachments/Pasted image 20250628105518.png"
+  ]
+}
