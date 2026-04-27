@@ -1,7 +1,8 @@
-# Graph Report - .  (2026-04-27)
+# Graph Report - learning-microservices  (2026-04-27)
 
 ## Corpus Check
-- Corpus is ~13,085 words - fits in a single context window. You may not need a graph.
+- 28 files · ~13,933 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 - 170 nodes · 230 edges · 12 communities detected
@@ -9,18 +10,18 @@
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Tutorial & Learning Concepts|Tutorial & Learning Concepts]]
-- [[_COMMUNITY_Architecture & Design Decisions|Architecture & Design Decisions]]
-- [[_COMMUNITY_Observability & Infrastructure|Observability & Infrastructure]]
-- [[_COMMUNITY_Event-Driven Messaging|Event-Driven Messaging]]
-- [[_COMMUNITY_Database Layer|Database Layer]]
-- [[_COMMUNITY_API Schemas & Routes|API Schemas & Routes]]
-- [[_COMMUNITY_Service Entrypoints|Service Entrypoints]]
-- [[_COMMUNITY_Configuration & Settings|Configuration & Settings]]
-- [[_COMMUNITY_Structured Logging|Structured Logging]]
-- [[_COMMUNITY_Architecture Diagrams|Architecture Diagrams]]
-- [[_COMMUNITY_Request Flow Concept|Request Flow Concept]]
-- [[_COMMUNITY_Project Structure|Project Structure]]
+- [[_COMMUNITY_Community 0|Community 0]]
+- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
+- [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 8|Community 8]]
+- [[_COMMUNITY_Community 9|Community 9]]
+- [[_COMMUNITY_Community 10|Community 10]]
+- [[_COMMUNITY_Community 12|Community 12]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Multi-Agent Research Assistant` - 16 edges
@@ -35,16 +36,16 @@
 10. `SQLAlchemy Async (Concept Note)` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `MVP Build Order (CLAUDE.md)` --semantically_similar_to--> `MVP Build Order (16 Steps)`  [INFERRED] [semantically similar]
-  CLAUDE.md → project.md
-- `Tech Stack` --references--> `Kafka Event Design`  [INFERRED]
-  CLAUDE.md → project.md
-- `Comparison: BackgroundTasks vs Celery vs Kafka` --references--> `Kafka Event Design`  [EXTRACTED]
-  tutorial/concepts/FastAPI Background Tasks.md → project.md
-- `System Architecture Overview` --references--> `Multi-Agent Research Assistant`  [EXTRACTED]
-  docs/architecture.md → project.md
-- `Phase 1 — Foundation: API Gateway + In-Process LangGraph` --references--> `API Gateway Service`  [EXTRACTED]
-  docs/phase-1.md → project.md
+- `MVP Build Order (16 Steps)` --semantically_similar_to--> `MVP Build Order (CLAUDE.md)`  [INFERRED] [semantically similar]
+  project.md → CLAUDE.md
+- `Kafka Event Design` --references--> `Tech Stack`  [INFERRED]
+  project.md → CLAUDE.md
+- `Kafka Event Design` --references--> `Comparison: BackgroundTasks vs Celery vs Kafka`  [EXTRACTED]
+  project.md → tutorial/concepts/FastAPI Background Tasks.md
+- `Multi-Agent Research Assistant` --references--> `System Architecture Overview`  [EXTRACTED]
+  project.md → docs/architecture.md
+- `API Gateway Service` --references--> `Phase 1 — Foundation: API Gateway + In-Process LangGraph`  [EXTRACTED]
+  project.md → docs/phase-1.md
 
 ## Hyperedges (group relationships)
 - **LangGraph Core Triad: State + Nodes + Edges** — concept_langgraph_stategraph, concept_langgraph_nodes, concept_langgraph_edges, concept_langgraph_state_merging [EXTRACTED 0.95]
@@ -53,84 +54,84 @@
 
 ## Communities
 
-### Community 0 - "Tutorial & Learning Concepts"
+### Community 0 - "Community 0"
 Cohesion: 0.09
 Nodes (34): Tutorial Obsidian Vault, FastAPI Background Tasks (Concept Note), BackgroundTasks DB Session Lifecycle Gotcha, Comparison: BackgroundTasks vs Celery vs Kafka, LangGraph Concepts (Concept Note), LangGraph Conditional Edges, LangGraph Edges, LangGraph Nodes (+26 more)
 
-### Community 1 - "Architecture & Design Decisions"
+### Community 1 - "Community 1"
 Cohesion: 0.12
 Nodes (30): Data Storage Strategy, Rationale: Why gRPC Between Services, Rationale: Why LangGraph in Orchestrator Only, System Architecture Overview, gRPC Conventions, LangGraph Conventions, MVP Build Order (CLAUDE.md), Tech Stack (+22 more)
 
-### Community 2 - "Observability & Infrastructure"
+### Community 2 - "Community 2"
 Cohesion: 0.14
 Nodes (18): Observability Conventions, Phase 1 — Foundation: API Gateway + In-Process LangGraph, Grafana Dashboards, Loki Structured Logging, Phase 4 — Observability: Prometheus, Grafana, Loki, OpenTelemetry, OpenTelemetry Distributed Tracing, Prometheus Metrics Setup, Rationale: Why Observability Matters (+10 more)
 
-### Community 3 - "Event-Driven Messaging"
+### Community 3 - "Community 3"
 Cohesion: 0.12
 Nodes (17): Rationale: Why Kafka/Redpanda for Events, Rationale: Why Redpanda for Local Dev, Kafka/Redpanda Conventions, Rationale: HTTP Between Gateway and Orchestrator in Phase 1, Rationale: Polling Instead of Streaming in Phase 1, aiokafka Consumer Pattern, aiokafka Producer Pattern, Phase 3 — Event-Driven Architecture: Kafka/Redpanda + Redis (+9 more)
 
-### Community 4 - "Database Layer"
+### Community 4 - "Community 4"
 Cohesion: 0.15
 Nodes (10): Base, Base, DeclarativeBase, create_task(), get_task(), Run the full LangGraph research workflow.      Creates its own DB session — the, ResearchTask, run_workflow() (+2 more)
 
-### Community 5 - "API Schemas & Routes"
+### Community 5 - "Community 5"
 Cohesion: 0.21
 Nodes (9): BaseModel, create_research(), CreateResearchRequest, get_research(), get_status(), ResearchRequest, ResearchResponse, TaskDetailResponse (+1 more)
 
-### Community 8 - "Service Entrypoints"
+### Community 8 - "Community 8"
 Cohesion: 0.5
 Nodes (1): health()
 
-### Community 9 - "Configuration & Settings"
+### Community 9 - "Community 9"
 Cohesion: 0.5
 Nodes (2): BaseSettings, Settings
 
-### Community 10 - "Structured Logging"
+### Community 10 - "Community 10"
 Cohesion: 0.67
 Nodes (2): get_logger(), _JSONFormatter
 
-### Community 12 - "Architecture Diagrams"
+### Community 12 - "Community 12"
 Cohesion: 1.0
 Nodes (2): Architecture Request Flow, Service Map
 
-### Community 25 - "Request Flow Concept"
+### Community 25 - "Community 25"
 Cohesion: 1.0
 Nodes (1): Request Flow
 
-### Community 26 - "Project Structure"
+### Community 26 - "Community 26"
 Cohesion: 1.0
 Nodes (1): Project Directory Structure
 
 ## Knowledge Gaps
 - **39 isolated node(s):** `Request Flow`, `gRPC Conventions`, `Kafka/Redpanda Conventions`, `LangGraph Conventions`, `Observability Conventions` (+34 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Service Entrypoints`** (4 nodes): `health()`, `lifespan()`, `main.py`, `main.py`
+- **Thin community `Community 8`** (4 nodes): `health()`, `lifespan()`, `main.py`, `main.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Configuration & Settings`** (4 nodes): `BaseSettings`, `Settings`, `config.py`, `config.py`
+- **Thin community `Community 9`** (4 nodes): `BaseSettings`, `Settings`, `config.py`, `config.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Structured Logging`** (4 nodes): `get_logger()`, `_JSONFormatter`, `.format()`, `logging.py`
+- **Thin community `Community 10`** (4 nodes): `get_logger()`, `_JSONFormatter`, `.format()`, `logging.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Architecture Diagrams`** (2 nodes): `Architecture Request Flow`, `Service Map`
+- **Thin community `Community 12`** (2 nodes): `Architecture Request Flow`, `Service Map`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Request Flow Concept`** (1 nodes): `Request Flow`
+- **Thin community `Community 25`** (1 nodes): `Request Flow`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Project Structure`** (1 nodes): `Project Directory Structure`
+- **Thin community `Community 26`** (1 nodes): `Project Directory Structure`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Tutorial: LangGraph Orchestrator (Phase 1)` connect `Tutorial & Learning Concepts` to `Architecture & Design Decisions`?**
+- **Why does `Tutorial: LangGraph Orchestrator (Phase 1)` connect `Community 0` to `Community 1`?**
   _High betweenness centrality (0.100) - this node is a cross-community bridge._
-- **Why does `Research Orchestrator Service` connect `Architecture & Design Decisions` to `Tutorial & Learning Concepts`, `Observability & Infrastructure`, `Event-Driven Messaging`?**
+- **Why does `Research Orchestrator Service` connect `Community 1` to `Community 0`, `Community 2`, `Community 3`?**
   _High betweenness centrality (0.096) - this node is a cross-community bridge._
-- **Why does `Phase 1 — Foundation: API Gateway + In-Process LangGraph` connect `Observability & Infrastructure` to `Architecture & Design Decisions`, `Event-Driven Messaging`?**
+- **Why does `Phase 1 — Foundation: API Gateway + In-Process LangGraph` connect `Community 2` to `Community 1`, `Community 3`?**
   _High betweenness centrality (0.062) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `Phase 3 — Event-Driven Architecture: Kafka/Redpanda + Redis` (e.g. with `Phase 2 — gRPC Agent Decomposition` and `Phase 4 — Observability: Prometheus, Grafana, Loki, OpenTelemetry`) actually correct?**
   _`Phase 3 — Event-Driven Architecture: Kafka/Redpanda + Redis` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Request Flow`, `gRPC Conventions`, `Kafka/Redpanda Conventions` to the rest of the system?**
   _39 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Tutorial & Learning Concepts` be split into smaller, more focused modules?**
+- **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.09 - nodes in this community are weakly interconnected._
-- **Should `Architecture & Design Decisions` be split into smaller, more focused modules?**
+- **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.12 - nodes in this community are weakly interconnected._
