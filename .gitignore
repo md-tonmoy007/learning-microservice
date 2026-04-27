@@ -1,0 +1,55 @@
+# ── Personal / project docs (kept locally only) ──────────────────────────────
+CLAUDE.md
+project.md
+docs/
+tutorial/
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── uv ───────────────────────────────────────────────────────────────────────
+# uv.lock is committed for reproducibility — do NOT add it here
+
+# ── Environment variables ─────────────────────────────────────────────────────
+.env
+!.env.example
+
+# ── gRPC generated stubs (regenerated from .proto at build time) ──────────────
+**/grpc_generated/
+
+# ── Test artifacts ────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# ── Editors ───────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+*.log
+
+# ── Kubernetes secrets (never commit) ─────────────────────────────────────────
+k8s/secrets/

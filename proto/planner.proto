@@ -1,0 +1,18 @@
+// Phase 2 — not compiled yet. Placeholder for the gRPC contract.
+syntax = "proto3";
+
+package planner;
+
+service PlannerService {
+  rpc CreatePlan (PlanRequest) returns (PlanResponse);
+}
+
+message PlanRequest {
+  string task_id = 1;
+  string user_query = 2;
+}
+
+message PlanResponse {
+  repeated string search_queries = 1;
+  repeated string report_sections = 2;
+}

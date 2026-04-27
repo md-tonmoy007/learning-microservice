@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package report;
+
+service ReportService {
+  rpc GenerateReport (ReportRequest) returns (ReportResponse);
+}
+
+message ReportRequest {
+  string task_id = 1;
+  string user_query = 2;
+  repeated string summaries = 3;
+}
+
+message ReportResponse {
+  string report_markdown = 1;
+}

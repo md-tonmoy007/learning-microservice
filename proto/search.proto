@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package search;
+
+service SearchService {
+  rpc Search (SearchRequest) returns (SearchResponse);
+}
+
+message SearchRequest {
+  string task_id = 1;
+  repeated string queries = 2;
+}
+
+message SearchResult {
+  string title = 1;
+  string url = 2;
+  string content = 3;
+  string source_type = 4;
+}
+
+message SearchResponse {
+  repeated SearchResult results = 1;
+}

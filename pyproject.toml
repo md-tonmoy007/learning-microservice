@@ -1,0 +1,20 @@
+[project]
+name = "multi-agent-research"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "api-gateway",
+    "orchestrator",
+    "shared",
+]
+
+[tool.uv.sources]
+api-gateway  = { workspace = true }
+orchestrator = { workspace = true }
+shared       = { workspace = true }
+
+[tool.uv.workspace]
+members = ["services/*", "shared"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

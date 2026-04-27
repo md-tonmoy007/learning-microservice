@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package summarizer;
+
+service SummarizerService {
+  rpc Summarize (SummarizeRequest) returns (SummarizeResponse);
+}
+
+message SearchResult {
+  string url = 1;
+  string content = 2;
+}
+
+message SummarizeRequest {
+  string task_id = 1;
+  string user_query = 2;
+  repeated SearchResult results = 3;
+}
+
+message SummarizeResponse {
+  string summary = 1;
+  repeated string key_points = 2;
+  repeated string citations = 3;
+}

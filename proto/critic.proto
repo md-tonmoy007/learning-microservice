@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package critic;
+
+service CriticService {
+  rpc Critique (CritiqueRequest) returns (CritiqueResponse);
+}
+
+message CritiqueRequest {
+  string task_id = 1;
+  string user_query = 2;
+  string summary = 3;
+}
+
+message CritiqueResponse {
+  float score = 1;
+  repeated string missing_points = 2;
+  bool needs_more_research = 3;
+}
