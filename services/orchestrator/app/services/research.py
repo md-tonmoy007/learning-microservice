@@ -42,6 +42,7 @@ async def run_workflow(task_id: str, query: str) -> None:
             "task_id": task_id,
             "user_query": query,
             "research_plan": [],
+            "report_sections": [],
             "search_results": [],
             "summaries": [],
             "critique": {},
