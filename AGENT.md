@@ -123,7 +123,8 @@ Useful endpoints:
 - Copy each service's `.env.example` to `.env` when needed
 - Never commit secrets
 - The current orchestrator depends on:
-  - `OPENAI_API_KEY`
+  - `OPENROUTER_API_KEY`
+  - `OPENROUTER_MODEL` (defaults to `z-ai/glm-4.5-air:free` in LLM agent services)
   - `TAVILY_API_KEY`
   - `POSTGRES_URL`
 - Optional tracing settings exist but are not required for Phase 1:

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "concepts/SQLAlchemy Async.md",
+                "file": "alembic/Alembic Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SQLAlchemy Async"
+              "title": "Alembic Overview"
             }
           }
         ],
@@ -196,8 +196,8 @@
             "state": {
               "type": "smart-lookup-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "smart-lookup-view"
+              "icon": "smart-lookup",
+              "title": "Lookup"
             }
           },
           {
@@ -219,9 +219,19 @@
               "icon": "SpacedRepIcon",
               "title": "Notes Review Queue"
             }
+          },
+          {
+            "id": "908f2c1c8e236fbd",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -245,44 +255,44 @@
   },
   "active": "7de0f64a1f3aeeca",
   "lastOpenFiles": [
+    "phase-2/gRPC Agent Decomposition.md",
+    "phase-2/LangGraph Phase 2.md",
+    "phase-2/gRPC Clients.md",
+    "phase-2/Report Service.md",
+    "phase-2/Critic Agent.md",
+    "phase-2/Summarizer Agent.md",
+    "phase-2/Search Agent.md",
+    "phase-2/Planner Agent.md",
+    "concepts/gRPC aio Servers.md",
+    "concepts/Protocol Buffers.md",
+    "concepts/gRPC.md",
+    "debugging/Docker Desktop Engine Missing.md",
+    "phase-1/PostgreSQL Models.md",
+    "debugging/uv Cache Access Denied.md",
+    "debugging",
+    "phase-2",
+    "Home.md.tmp.16024.1777308721173",
+    "alembic/Codex.md",
+    "alembic/Common Commands.md",
+    "alembic/Common Commands.md.tmp.16024.1777308663030",
+    "alembic/Async Setup.md",
+    "alembic/Async Setup.md.tmp.16024.1777308621908",
+    "alembic/Alembic Overview.md",
+    "alembic",
+    "phase-1/LangGraph Orchestrator.md",
+    "phase-1/Docker and Compose.md",
+    "phase-1/Shared Logging.md",
+    "phase-1/Project Structure.md",
+    "phase-1/ResearchState.md",
+    "phase-1/API Gateway.md",
+    "Home.md.tmp.16024.1777303692839",
+    "phase-1/LangGraph Orchestrator.md.tmp.16024.1777303679783",
+    "phase-1/LangGraph Orchestrator.md.tmp.16024.1777303670137",
+    "phase-1/Docker and Compose.md.tmp.16024.1777303649693",
+    "concepts/SQLAlchemy Async.md",
     "Docker/basics/More into docker networking.md",
-    "Docker/basics/commands.md",
-    "Linux/01-System/Boot Process - initramfs.md",
-    "agents.md",
-    "Linux/01-System/Environment Variables.md",
-    "Linux/09-Beyond-the-basics/Namespaces/mount namespaces.md",
-    "Linux/09-Beyond-the-basics/Namespaces/Namespace basics.md",
     "attachments/Pasted image 20260411112818.png",
     "attachments/Pasted image 20260411112315.png",
-    "attachments",
-    "Linux/06-Text-and-Files/awk - Text Processing.md",
-    "Linux/07-Backup-and-Storage/dd - Disk Duplication.md",
-    "Linux/09-Beyond-the-basics/Namespaces",
-    "Linux/09-Beyond-the-basics",
-    "Linux/02-Filesystem/Filesystem Layout - FHS.md",
-    "raw_docs/obsidian-spaced-repetition.skill",
-    "Linux/08-System-Information/System Information Commands.md",
-    "Linux/08-System-Information/System Information Commands.md.tmp.11824.1773984571317",
-    "Linux/08-System-Information/Hardware Information Commands.md",
-    "Linux/08-System-Information/Hardware Information Commands.md.tmp.11824.1773984558458",
-    "Linux/07-Backup-and-Storage/dd - Disk Duplication.md.tmp.11824.1773984539022",
-    "raw_docs/previous_notes_on_linux/Filesystem_layout.md",
-    "Linux/07-Backup-and-Storage/Compression Tools.md",
-    "Linux/07-Backup-and-Storage/rsync - File Synchronization.md",
-    "Linux/07-Backup-and-Storage/rsync - File Synchronization.md.tmp.11824.1773984507683",
-    "Linux/06-Text-and-Files/File Manipulation.md",
-    "Linux/06-Text-and-Files/File Manipulation.md.tmp.11824.1773984494897",
-    "Linux/06-Text-and-Files/Vim Editor.md",
-    "Linux/06-Text-and-Files/Vim Editor.md.tmp.11824.1773984484732",
-    "Linux/06-Text-and-Files/File Comparison - diff and cmp.md",
-    "Linux/06-Text-and-Files/sed - Stream Editor.md",
-    "Linux/06-Text-and-Files/head tail less - Viewing Files.md",
-    "Linux/06-Text-and-Files/cat - Concatenate and View Files.md",
-    "Linux/05-Networking/iptables Basics.md",
-    "Linux/05-Networking/Network Diagnostics.md",
-    "Linux/05-Networking/SCP - Secure Copy.md",
-    "Linux/05-Networking/SSH - Secure Shell.md",
-    "Linux/05-Networking/DNS and Name Resolution.md",
     "raw_docs/attachments/Pasted image 20250701122445.png",
     "raw_docs/attachments/Pasted image 20250701122414.png",
     "raw_docs/attachments/Pasted image 20250701120409.png",

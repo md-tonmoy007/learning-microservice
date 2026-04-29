@@ -7,7 +7,7 @@ file: services/orchestrator/app/graph/workflow.py
 
 > The brain of the system. Owns the research workflow: receives a query, runs it through a LangGraph state machine, and persists the result to PostgreSQL.
 
-Related: [[ResearchState]] · [[LangGraph Concepts]] · [[FastAPI Background Tasks]] · [[PostgreSQL Models]] · [[Home]]
+Related: [[ResearchState]] · [[LangGraph Concepts]] · [[FastAPI Background Tasks]] · [[PostgreSQL Models]] · [[Project Structure]] · [[Home]]
 
 ---
 
@@ -22,6 +22,25 @@ Related: [[ResearchState]] · [[LangGraph Concepts]] · [[FastAPI Background Tas
 ---
 
 ## Walkthrough
+
+### FastAPI lifespan — startup and shutdown
+
+`app/main.py` uses the `lifespan` context manager instead of deprecated `on_event` hooks:
+
+```python
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    yield                    # everything before yield = startup
+    await engine.dispose()   # everything after yield = shutdown
+
+app = FastAPI(lifespan=lifespan)
+```
+
+The `yield` separates startup from shutdown logic. Code before `yield` runs when the app starts; code after runs when it shuts down gracefully (e.g., `Ctrl+C` or `docker compose down`).
+
+`engine.dispose()` closes all open database connections in the connection pool. Without this, the process exits with open connections, which PostgreSQL logs as errors. The gateway's `main.py` does not have a lifespan because it has no resources to clean up — no database engine.
 
 ### The big picture
 
@@ -139,4 +158,4 @@ POST /internal/research {"query": "..."}
 > In Phase 2, each node in `nodes.py` will make a gRPC call to a separate microservice instead of calling LangChain directly. The LangGraph graph structure in `workflow.py` does not change at all — only the transport inside each node changes.
 
 > [!warning] LLM module-level instantiation
-> `_llm = ChatOpenAI(...)` in `nodes.py` is created once at import time. If `OPENAI_API_KEY` is not set when the orchestrator starts, this will fail at import. Always set the env var before starting the service.
+> `_llm = ChatOpenRouter(...)` is created once at import time. If `OPENROUTER_API_KEY` is not set when the service starts, this will fail at import. Always set the env var before starting the service.

@@ -4,14 +4,24 @@ version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
     "api-gateway",
+    "critic-agent",
     "orchestrator",
+    "planner-agent",
+    "report-service",
+    "search-agent",
     "shared",
+    "summarizer-agent",
 ]
 
 [tool.uv.sources]
 api-gateway  = { workspace = true }
+critic-agent = { workspace = true }
 orchestrator = { workspace = true }
+planner-agent = { workspace = true }
+report-service = { workspace = true }
+search-agent = { workspace = true }
 shared       = { workspace = true }
+summarizer-agent = { workspace = true }
 
 [tool.uv.workspace]
 members = ["services/*", "shared"]

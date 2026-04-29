@@ -66,5 +66,8 @@
     "results_collection_key": "smart_blocks",
     "score_algo_key": "similarity",
     "results_limit": 20
+  },
+  "embedding_models": {
+    "default_model_key": "transformers#1777298863224"
   }
 }
