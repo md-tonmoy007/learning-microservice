@@ -12,9 +12,9 @@ tags: [home, index]
 
 | Phase | Topic                              | Status   |
 |------|------------------------------------|----------|
-| 1    | [[API Gateway]] · [[LangGraph Orchestrator]] · [[ResearchState]] · [[PostgreSQL Models]] | In progress |
-| 2    | [[gRPC Agent Decomposition]] · [[Planner Agent]] · [[Search Agent]] · [[Summarizer Agent]] · [[Critic Agent]] · [[Report Service]] | In progress |
-| 3    | Kafka/Redpanda + Redis + SSE       | Not started |
+| 1    | [[API Gateway]] · [[LangGraph Orchestrator]] · [[ResearchState]] · [[PostgreSQL Models]] | Done |
+| 2    | [[gRPC Agent Decomposition]] · [[Planner Agent]] · [[Search Agent]] · [[Summarizer Agent]] · [[Critic Agent]] · [[Report Service]] | Done |
+| 3    | [[01 Event-Driven Architecture]] · [[02 Redpanda and Kafka Events]] · [[03 API Gateway Phase 3]] · [[04 Orchestrator Kafka Consumer]] · [[05 Server-Sent Events SSE]] · [[06 Redis Status Cache]] | Done |
 | 4    | Prometheus + Grafana + Loki + OTEL | Not started |
 | 5    | Qdrant Vector Memory               | Not started |
 | 6    | Kubernetes + Helm + CI/CD          | Not started |
@@ -46,6 +46,19 @@ tags: [home, index]
 
 ---
 
+## Phase 3 Notes
+
+Read in this order:
+
+1. [[01 Event-Driven Architecture]] — why we switched from HTTP to Kafka; the full architecture diagram; key design decisions
+2. [[02 Redpanda and Kafka Events]] — `shared/kafka_events.py`, topic naming, `make_event`, Redpanda docker setup
+3. [[03 API Gateway Phase 3]] — gateway changes: Kafka producer singleton, SSE endpoint, Redis status reads
+4. [[04 Orchestrator Kafka Consumer]] — consumer as background task, `ainvoke` → `astream`, per-node event publishing, duplicate delivery handling
+5. [[05 Server-Sent Events SSE]] — `StreamingResponse`, SSE text format, late-connect replay, disconnect detection
+6. [[06 Redis Status Cache]] — key design, write path in orchestrator, read path in gateway, Redis vs PostgreSQL
+
+---
+
 ## Concept Notes
 
 - [[LangGraph Concepts]] — StateGraph, nodes, edges, conditional routing
@@ -54,6 +67,9 @@ tags: [home, index]
 - [[gRPC]] — what gRPC is, how it works, vs REST, status codes, async model
 - [[Protocol Buffers]] — typed contracts, field types, field numbers, generation, pb2 files
 - [[gRPC aio Servers]] — async server pattern, servicer class, context.abort(), request lifecycle
+- [[Kafka and Redpanda]] — topics, consumer groups, offsets, aiokafka producer/consumer API
+- [[Server-Sent Events]] — SSE vs WebSocket, StreamingResponse, keepalive, browser EventSource
+- [[Redis]] — key-value store, asyncio redis, when to use Redis vs PostgreSQL
 
 ---
 

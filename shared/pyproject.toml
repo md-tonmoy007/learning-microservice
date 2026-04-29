@@ -3,3 +3,9 @@ name = "shared"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = []
+
+[tool.setuptools]
+packages = ["shared"]
+
+[tool.setuptools.package-dir]
+"shared" = "."

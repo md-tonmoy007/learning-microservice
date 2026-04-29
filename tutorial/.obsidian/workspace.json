@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "alembic/Alembic Overview.md",
+                "file": "phase-2/gRPC Clients.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Alembic Overview"
+              "title": "gRPC Clients"
             }
           }
         ],
@@ -231,7 +231,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -253,8 +253,27 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "7de0f64a1f3aeeca",
+  "active": "35f0eeb19fcd2ecb",
   "lastOpenFiles": [
+    "phase-4/01 Observability Overview.md",
+    "phase-4",
+    "Home.md.tmp.15276.1777483845230",
+    "Home.md.tmp.15276.1777483831295",
+    "phase-3/06 Redis Status Cache.md",
+    "phase-3/05 Server-Sent Events SSE.md",
+    "phase-3/04 Orchestrator Kafka Consumer.md",
+    "phase-3/04 Orchestrator Kafka Consumer.md.tmp.15276.1777483739855",
+    "phase-3/03 API Gateway Phase 3.md",
+    "phase-3/02 Redpanda and Kafka Events.md",
+    "phase-3/02 Redpanda and Kafka Events.md.tmp.15276.1777483638151",
+    "phase-3/01 Event-Driven Architecture.md",
+    "phase-3",
+    "concepts/Redis.md",
+    "concepts/Redis.md.tmp.15276.1777483566449",
+    "concepts/Server-Sent Events.md",
+    "concepts/Server-Sent Events.md.tmp.15276.1777483540854",
+    "concepts/Kafka and Redpanda.md",
+    "alembic/Alembic Overview.md",
     "phase-2/gRPC Agent Decomposition.md",
     "phase-2/LangGraph Phase 2.md",
     "phase-2/gRPC Clients.md",
@@ -271,26 +290,7 @@
     "debugging/uv Cache Access Denied.md",
     "debugging",
     "phase-2",
-    "Home.md.tmp.16024.1777308721173",
     "alembic/Codex.md",
-    "alembic/Common Commands.md",
-    "alembic/Common Commands.md.tmp.16024.1777308663030",
-    "alembic/Async Setup.md",
-    "alembic/Async Setup.md.tmp.16024.1777308621908",
-    "alembic/Alembic Overview.md",
-    "alembic",
-    "phase-1/LangGraph Orchestrator.md",
-    "phase-1/Docker and Compose.md",
-    "phase-1/Shared Logging.md",
-    "phase-1/Project Structure.md",
-    "phase-1/ResearchState.md",
-    "phase-1/API Gateway.md",
-    "Home.md.tmp.16024.1777303692839",
-    "phase-1/LangGraph Orchestrator.md.tmp.16024.1777303679783",
-    "phase-1/LangGraph Orchestrator.md.tmp.16024.1777303670137",
-    "phase-1/Docker and Compose.md.tmp.16024.1777303649693",
-    "concepts/SQLAlchemy Async.md",
-    "Docker/basics/More into docker networking.md",
     "attachments/Pasted image 20260411112818.png",
     "attachments/Pasted image 20260411112315.png",
     "raw_docs/attachments/Pasted image 20250701122445.png",

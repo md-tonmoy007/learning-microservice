@@ -3,10 +3,6 @@ from datetime import datetime
 from pydantic import BaseModel
 
 
-class CreateResearchRequest(BaseModel):
-    query: str
-
-
 class ResearchResponse(BaseModel):
     task_id: str
     status: str

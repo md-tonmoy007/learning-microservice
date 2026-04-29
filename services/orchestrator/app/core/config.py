@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     summarizer_agent_address: str = "summarizer-agent:50053"
     critic_agent_address: str = "critic-agent:50054"
     report_service_address: str = "report-service:50055"
+    kafka_bootstrap_servers: str = "redpanda:9092"
+    redis_url: str = "redis://redis:6379"
 
 
 settings = Settings()
