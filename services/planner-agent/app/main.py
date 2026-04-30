@@ -1,14 +1,19 @@
 import asyncio
 
 import grpc
+from opentelemetry.instrumentation.grpc import GrpcAioInstrumentorServer
 
 from app.core.config import settings
+from app.core.telemetry import setup_telemetry
 from app.grpc_generated_path import ensure_grpc_generated_on_path
 
 ensure_grpc_generated_on_path()
 
 from app.grpc_generated import planner_pb2_grpc
 from app.services.planner import PlannerServicer
+
+setup_telemetry("planner-agent", settings.otel_endpoint)
+GrpcAioInstrumentorServer().instrument()
 
 
 async def serve() -> None:

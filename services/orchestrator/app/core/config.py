@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     report_service_address: str = "report-service:50055"
     kafka_bootstrap_servers: str = "redpanda:9092"
     redis_url: str = "redis://redis:6379"
+    otel_endpoint: str = "http://otel-collector:4317"
 
 
 settings = Settings()

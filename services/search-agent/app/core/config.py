@@ -6,6 +6,7 @@ class Settings(BaseSettings):
 
     tavily_api_key: str = ""
     grpc_port: int = 50052
+    otel_endpoint: str = "http://otel-collector:4317"
 
 
 settings = Settings()

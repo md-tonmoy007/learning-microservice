@@ -1,8 +1,20 @@
 import json
 import logging
+import time
 
+from prometheus_client import Counter, Histogram
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+
+research_tasks_total = Counter(
+    "research_tasks_total",
+    "Total research tasks by final status",
+    ["status"],
+)
+llm_workflow_duration_seconds = Histogram(
+    "llm_workflow_duration_seconds",
+    "End-to-end LangGraph workflow duration in seconds",
+)
 
 from app.core.database import AsyncSessionFactory
 from app.core.kafka import publish_event
@@ -51,6 +63,8 @@ async def get_task(db: AsyncSession, task_id: str) -> ResearchTask | None:
 
 async def run_workflow(task_id: str, query: str) -> None:
     """Consume a research.created event: persist the task, run LangGraph, emit Kafka events."""
+    research_tasks_total.labels(status="started").inc()
+    start_time = time.monotonic()
     async with AsyncSessionFactory() as db:
         # Create or find the task record
         task = ResearchTask(id=task_id, user_query=query, status="running")
@@ -107,6 +121,8 @@ async def run_workflow(task_id: str, query: str) -> None:
             task.research_plan = json.dumps(current_state.get("research_plan", []))
             await db.commit()
 
+            research_tasks_total.labels(status="completed").inc()
+            llm_workflow_duration_seconds.observe(time.monotonic() - start_time)
             await _set_redis_status(task_id, "completed")
             await publish_event(
                 RESEARCH_COMPLETED,
@@ -119,6 +135,8 @@ async def run_workflow(task_id: str, query: str) -> None:
             task.error_message = str(exc)
             await db.commit()
 
+            research_tasks_total.labels(status="failed").inc()
+            llm_workflow_duration_seconds.observe(time.monotonic() - start_time)
             await _set_redis_status(task_id, "failed")
             await publish_event(
                 RESEARCH_FAILED,

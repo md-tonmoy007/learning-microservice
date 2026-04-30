@@ -10,6 +10,10 @@ dependencies = [
     "aiokafka>=0.11.0",
     "redis>=5.0.0",
     "shared",
+    "prometheus-fastapi-instrumentator>=7.0.0",
+    "opentelemetry-sdk>=1.20.0",
+    "opentelemetry-instrumentation-fastapi>=0.40b0",
+    "opentelemetry-exporter-otlp-proto-grpc>=1.20.0",
 ]
 
 [tool.uv.sources]

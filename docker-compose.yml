@@ -9,6 +9,7 @@ services:
       ORCHESTRATOR_URL: http://orchestrator:8001
       KAFKA_BOOTSTRAP_SERVERS: redpanda:9092
       REDIS_URL: redis://redis:6379
+      OTEL_ENDPOINT: http://otel-collector:4317
     depends_on:
       orchestrator:
         condition: service_healthy
@@ -36,6 +37,7 @@ services:
       REPORT_SERVICE_ADDRESS: report-service:50055
       KAFKA_BOOTSTRAP_SERVERS: redpanda:9092
       REDIS_URL: redis://redis:6379
+      OTEL_ENDPOINT: http://otel-collector:4317
     depends_on:
       postgres:
         condition: service_healthy
@@ -116,6 +118,7 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-z-ai/glm-4.5-air:free}
       LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2:-false}
       LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY:-}
+      OTEL_ENDPOINT: http://otel-collector:4317
     ports:
       - "50051:50051"
     restart: on-failure
@@ -126,6 +129,7 @@ services:
       dockerfile: services/search-agent/Dockerfile
     environment:
       TAVILY_API_KEY: ${TAVILY_API_KEY}
+      OTEL_ENDPOINT: http://otel-collector:4317
     ports:
       - "50052:50052"
     restart: on-failure
@@ -139,6 +143,7 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-z-ai/glm-4.5-air:free}
       LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2:-false}
       LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY:-}
+      OTEL_ENDPOINT: http://otel-collector:4317
     ports:
       - "50053:50053"
     restart: on-failure
@@ -152,6 +157,7 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-z-ai/glm-4.5-air:free}
       LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2:-false}
       LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY:-}
+      OTEL_ENDPOINT: http://otel-collector:4317
     ports:
       - "50054:50054"
     restart: on-failure
@@ -165,9 +171,81 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-z-ai/glm-4.5-air:free}
       LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2:-false}
       LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY:-}
+      OTEL_ENDPOINT: http://otel-collector:4317
     ports:
       - "50055:50055"
     restart: on-failure
 
+  # ── Observability stack ────────────────────────────────────────────────────
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: on-failure
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_INSTALL_PLUGINS: grafana-tempo-datasource
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./config/grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
+      - loki
+      - tempo
+    restart: on-failure
+
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./config/loki.yaml:/etc/loki/local-config.yaml
+      - loki_data:/loki
+    command: -config.file=/etc/loki/local-config.yaml
+    restart: on-failure
+
+  promtail:
+    image: grafana/promtail:latest
+    volumes:
+      - ./config/promtail.yaml:/etc/promtail/config.yml
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: -config.file=/etc/promtail/config.yml
+    depends_on:
+      - loki
+    restart: on-failure
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+    volumes:
+      - ./config/otel-collector.yaml:/etc/otel/config.yaml
+    command: ["--config=/etc/otel/config.yaml"]
+    depends_on:
+      - tempo
+    restart: on-failure
+
+  tempo:
+    image: grafana/tempo:latest
+    ports:
+      - "3200:3200"
+    volumes:
+      - ./config/tempo.yaml:/etc/tempo.yaml
+      - tempo_data:/tmp/tempo
+    command: -config.file=/etc/tempo.yaml
+    restart: on-failure
+
 volumes:
   postgres_data:
+  grafana_data:
+  loki_data:
+  tempo_data:

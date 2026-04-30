@@ -15,7 +15,7 @@ tags: [home, index]
 | 1    | [[API Gateway]] · [[LangGraph Orchestrator]] · [[ResearchState]] · [[PostgreSQL Models]] | Done |
 | 2    | [[gRPC Agent Decomposition]] · [[Planner Agent]] · [[Search Agent]] · [[Summarizer Agent]] · [[Critic Agent]] · [[Report Service]] | Done |
 | 3    | [[01 Event-Driven Architecture]] · [[02 Redpanda and Kafka Events]] · [[03 API Gateway Phase 3]] · [[04 Orchestrator Kafka Consumer]] · [[05 Server-Sent Events SSE]] · [[06 Redis Status Cache]] | Done |
-| 4    | Prometheus + Grafana + Loki + OTEL | Not started |
+| 4    | [[01 Observability Overview]] · [[02 Prometheus Metrics]] · [[03 Custom Metrics Orchestrator]] · [[04 Grafana Dashboards]] · [[05 Loki and Promtail]] · [[06 OpenTelemetry Tracing]] | Done |
 | 5    | Qdrant Vector Memory               | Not started |
 | 6    | Kubernetes + Helm + CI/CD          | Not started |
 
@@ -59,10 +59,23 @@ Read in this order:
 
 ---
 
+## Phase 4 Notes
+
+Read in this order:
+
+1. [[01 Observability Overview]] — the three pillars (metrics, logs, traces), what Phase 4 adds to the architecture, why all three signals are needed
+2. [[02 Prometheus Metrics]] — `prometheus_fastapi_instrumentator`, the pull model, `/metrics` endpoint, histogram buckets vs averages
+3. [[03 Custom Metrics Orchestrator]] — `Counter` and `Histogram` from `prometheus_client`, instrumenting `run_workflow`, Counter vs Histogram vs Gauge
+4. [[04 Grafana Dashboards]] — datasource provisioning, PromQL crash course, the six dashboards, trace-to-logs correlation
+5. [[05 Loki and Promtail]] — Docker socket log discovery, relabeling, JSON pipeline stages, LogQL, why Loki indexes labels not content
+6. [[06 OpenTelemetry Tracing]] — spans and traces, context propagation, `setup_telemetry`, `GrpcAioInstrumentorClient` vs `GrpcAioInstrumentorServer`, the OTel Collector
+
+---
+
 ## Concept Notes
 
-- [[LangGraph Concepts]] — StateGraph, nodes, edges, conditional routing
-- [[FastAPI Background Tasks]] — how BackgroundTasks works, the session lifecycle gotcha
+- [[LangGraph Concepts]] - StateGraph, nodes, edges, conditional routing
+- [[FastAPI Background Tasks]] - how BackgroundTasks works, the session lifecycle gotcha
 - [[SQLAlchemy Async]] — engine, async_sessionmaker, Mapped columns, get_db
 - [[gRPC]] — what gRPC is, how it works, vs REST, status codes, async model
 - [[Protocol Buffers]] — typed contracts, field types, field numbers, generation, pb2 files
@@ -70,6 +83,49 @@ Read in this order:
 - [[Kafka and Redpanda]] — topics, consumer groups, offsets, aiokafka producer/consumer API
 - [[Server-Sent Events]] — SSE vs WebSocket, StreamingResponse, keepalive, browser EventSource
 - [[Redis]] — key-value store, asyncio redis, when to use Redis vs PostgreSQL
+- [[Prometheus]] — pull model, Counter/Histogram/Gauge types, PromQL essentials
+- [[OpenTelemetry]] - traces, spans, context propagation, TracerProvider, the OTel Collector
+- [[Grafana]] - datasources, dashboards, Explore tab, PromQL vs LogQL, trace-to-logs navigation
+
+## Redpanda Kafka Series
+
+Read in this order:
+
+1. [[00 Series Index]]
+2. [[01 Why Event Streaming Matters]]
+3. [[02 Kafka Core Concepts]]
+4. [[03 Redpanda for Local Development]]
+5. [[04 Producers Events and Keys]]
+6. [[05 Consumers Consumer Groups and Offsets]]
+7. [[06 Topics Partitions and Ordering]]
+8. [[07 Event Design and Shared Contracts]]
+9. [[08 Redpanda in docker-compose]]
+10. [[09 API Gateway Kafka Producer Flow]]
+11. [[10 Orchestrator Kafka Consumer Flow]]
+12. [[11 SSE Redis and User Feedback]]
+13. [[12 Reliability Delivery and Idempotency]]
+14. [[13 Debugging Kafka and Redpanda Locally]]
+15. [[14 Production Kafka Beyond Local Dev]]
+
+## Observability Series
+
+Read in this order:
+
+1. [[00 Observability Series Index]]
+2. [[01 Why Observability Matters]]
+3. [[02 Metrics Logs and Traces]]
+4. [[03 Prometheus Fundamentals]]
+5. [[04 Prometheus in This Project]]
+6. [[05 Grafana Fundamentals]]
+7. [[06 Grafana in This Project]]
+8. [[07 Loki and Structured Logging]]
+9. [[08 Promtail Log Shipping]]
+10. [[09 Loki and Promtail in This Project]]
+11. [[10 OpenTelemetry Fundamentals]]
+12. [[11 Tempo and the OTel Collector]]
+13. [[12 OpenTelemetry in This Project]]
+14. [[13 Debugging with the Full Observability Stack]]
+15. [[14 Production Observability Thinking]]
 
 ---
 

@@ -2,14 +2,21 @@ import asyncio
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+from opentelemetry.instrumentation.grpc import GrpcAioInstrumentorClient
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from app.api.research import router
 from app.core.config import settings
 from app.core.database import engine
 from app.core.kafka import run_research_consumer, start_producer, stop_producer
 from app.core.redis_client import start_redis, stop_redis
+from app.core.telemetry import setup_telemetry
 from app.models import research  # noqa: F401 — registers models with Base for Alembic
 from app.services.research import run_workflow
+
+setup_telemetry("orchestrator", settings.otel_endpoint)
+GrpcAioInstrumentorClient().instrument()
 
 
 @asynccontextmanager
@@ -28,6 +35,9 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Orchestrator", version="0.1.0", lifespan=lifespan)
+
+Instrumentator().instrument(app).expose(app)
+FastAPIInstrumentor.instrument_app(app)
 
 app.include_router(router, prefix="/internal/research", tags=["internal"])
 

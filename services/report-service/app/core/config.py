@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     langchain_tracing_v2: bool = False
     langchain_api_key: str = ""
     grpc_port: int = 50055
+    otel_endpoint: str = "http://otel-collector:4317"
 
 
 settings = Settings()
